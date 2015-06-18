@@ -21,14 +21,14 @@ public class TileMapVisualizer {
     private static final String HELP_USAGE = "Usage:\n"
             + " stdin: tile map (txt file)\n"
             + " stdout: tile image (png file)";
-    private static final String HELP_PARAMS = "Options:\n" + OptionStore.HELP;
+    private static final String HELP_PARAMS = "Options:\n" + ParameterStore.HELP;
 
     /**
      * @param args Command line arguments (Options).
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        OptionStore options = new OptionStore(args);
+        ParameterStore options = new ParameterStore(args);
         if (options.isHelp()) {
             System.err.println(HELP_USAGE);
             System.err.println(HELP_PARAMS);

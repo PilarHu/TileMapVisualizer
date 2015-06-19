@@ -44,4 +44,4 @@ command line arguments:
 `-cm basergb.properties`
 
 image output:
-![chess board tiles](https://raw.githubusercontent.com/PliarHu/TileMapVisualizer/master/examples/chess.png "Chess board tiles")
+![chess board tiles](https://raw.githubusercontent.com/PilarHu/TileMapVisualizer/master/examples/chess.png "Chess board tiles")

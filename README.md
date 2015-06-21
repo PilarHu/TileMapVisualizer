@@ -44,4 +44,29 @@ command line arguments:
 `-cm basergb.properties`
 
 image output:
+
 ![chess board tiles](https://raw.githubusercontent.com/PilarHu/TileMapVisualizer/master/examples/chess.png "Chess board tiles")
+
+#### Shifted tiles
+input text file `hello.txt`:
+```
+...........................................................................
+.XX.XX..XXXXX..XX.....XX......XXX.....XX.XX...XXX...XXXX...XX.....XXXX...XX.
+.X..X...X......X......X......X..X.....X..X...X..X...X..X...X......X..X...X.
+.XXXXX..XXX....XX.....XX.....XX.XX....X.X.X..XX.XX..XXXX...XX.....XX.XX..XX.
+.X..X...X......X......X......X..X.....XXXX...X..X...X..X...X......X..X.....
+.XX.XX..XXXXX..XXXXX..XXXXX...XXX......XXX....XXX...XX.XX..XXXXX..XXXX...XX.
+...........................................................................
+```
+colormap `cm2.properties`:
+```
+color..=#EEEEEE
+color.X=#CCBB99
+```
+
+command line arguments:
+`-she -y 10 -l 1 -cm cm2.properties`
+
+image output:
+
+![shifted tiles example](https://raw.githubusercontent.com/PilarHu/TileMapVisualizer/master/examples/hello.png "Shifted tiles")

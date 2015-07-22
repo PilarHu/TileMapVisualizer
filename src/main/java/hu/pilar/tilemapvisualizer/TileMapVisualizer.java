@@ -39,8 +39,12 @@ public class TileMapVisualizer {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int maxCols = 0;
         List<char[]> char2D = new ArrayList<>();
-        while (br.ready()) {
-            char[] chars = br.readLine().toCharArray();
+        while (true) {
+            String line = br.readLine();
+            if (line==null) {
+                break;
+            }
+            char[] chars = line.toCharArray();
             if (chars.length > maxCols) {
                 maxCols = chars.length;
             }

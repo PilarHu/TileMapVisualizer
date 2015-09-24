@@ -37,7 +37,8 @@ public class TileMapVisualizer {
 
         // read map
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int maxCols = 0;
+        int maxHalfCols = 0;
+
         List<char[]> char2D = new ArrayList<>();
         while (true) {
             String line = br.readLine();
@@ -45,18 +46,16 @@ public class TileMapVisualizer {
                 break;
             }
             char[] chars = line.toCharArray();
-            if (chars.length > maxCols) {
-                maxCols = chars.length;
+            int lineHalfCells=2 * chars.length + (((char2D.size()&1)==1?options.isShiftOdd():options.isShiftEven())?1:0);
+            if (lineHalfCells > maxHalfCols) {
+                maxHalfCols = lineHalfCells;
             }
             char2D.add(chars);
         }
 
         // calculate dimensions
-        int imageWidth = options.getTileWidth() * maxCols;
+        int imageWidth = options.getTileWidth() * maxHalfCols / 2;
         int shiftWidth = (options.getTileWidth() + 1) / 2;
-        if (options.isShiftEven() || options.isShiftOdd()) {
-            imageWidth += shiftWidth;
-        }
 
         // generate image
         BufferedImage img = new BufferedImage(imageWidth, options.getTileHeight() * char2D.size(), BufferedImage.TYPE_BYTE_INDEXED);
